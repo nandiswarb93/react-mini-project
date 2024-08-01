@@ -1,0 +1,40 @@
+/* Navbar.css */
+
+body,ul,li{
+    margin : 0px;
+    padding : 0px;
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    color : white;
+    background-color : rgb(106, 203, 106);
+  }
+  
+  .nav-item {
+    display: inline-block;
+    border : 2px solid green;
+    margin : 10px;
+    background-color : rgb(218, 115, 115);
+    height : 25px;
+    color : white;
+    border-radius : 10px;
+  }
+  
+  .nav-link {
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #007bff; /* Bootstrap's primary color */
+  }
+  
+  .nav-link.active {
+    color: #0056b3; /* Darker shade for active link */
+  }
+  
