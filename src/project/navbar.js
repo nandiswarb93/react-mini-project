@@ -37,6 +37,12 @@ const Navbar = () => {
               Menu
             </NavLink>
           </li>
+
+          <li className="nav-item">
+            <NavLink to="/Favourite" style={linkStyle}>
+              favourite's
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
