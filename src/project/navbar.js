@@ -75,7 +75,7 @@ import { useContext, useState } from "react";
 import { RecipeContext } from "./navigator";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./Navbar.css"; // Import the CSS file
+import "./navbar.css"; // Import the CSS file
 
 const Navbar = () => {
   const [search, setSearch] = useState("");

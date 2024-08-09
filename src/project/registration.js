@@ -111,7 +111,7 @@ import Navbar from "./navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./Registration.css"; // Import the CSS file
+import "./registration.css"; // Import the CSS file
 
 const Registration = () => {
   const [username, setUserName] = useState("");
