@@ -5,24 +5,23 @@ import { RecipeContext } from "./navigator";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import "./Home.css"; // Import the CSS file
+import "./Home.css";
 
 const Home = () => {
-  const { recipeList, addFavDishHandler, accname } = useContext(RecipeContext);
+  const { addfavouritedishhaHandler, accname } = useContext(RecipeContext);
   const [search, setSearch] = useState("");
   const [searchList, setSearchList] = useState([]);
   const navigate = useNavigate();
 
-  const addFoodHandler = (eachFood) => {
-    addFavDishHandler(eachFood);
-    const newUpdatedData = recipeList.map((each) => {
-      if (each.id === eachFood.id) {
-        return { ...each, existingInFavourite: true };
-      } else {
-        return each;
-      }
-    });
-    setSearchList(newUpdatedData);
+  const addfoodhandler = (eachfood) => {
+    addfavouritedishhaHandler(eachfood);
+    setSearchList(
+      searchList.map((recipe) =>
+        recipe.id === eachfood.id
+          ? { ...recipe, existingInFavourite: true }
+          : recipe
+      )
+    );
   };
 
   const goToViewMore = (id) => {
@@ -34,11 +33,6 @@ const Home = () => {
   };
 
   const fetchSearchResults = async (query) => {
-    if (query.length === 0) {
-      setSearchList([]);
-      return;
-    }
-
     try {
       const { data, status } = await axios.get(
         `https://dummyjson.com/recipes/search?q=${query}`
@@ -60,16 +54,12 @@ const Home = () => {
   }, [search]);
 
   const searchHandler = (event) => {
-    const userEntered = event.target.value;
-    setSearch(userEntered);
+    setSearch(event.target.value);
   };
-
-  const recipesToDisplay = search.length === 0 ? recipeList : searchList;
 
   return (
     <div className="home-container">
       <Navbar />
-
       <center>
         <h4>Welcome {accname}</h4>
       </center>
@@ -83,40 +73,19 @@ const Home = () => {
           className="home-search-input"
         />
       </div>
-
-      <div className="home-recipe-list">
-        {recipesToDisplay.length > 0 ? (
-          recipesToDisplay.map((each) => (
-            <div key={each.id} className="home-recipe-card">
-              <h4>{each.name}</h4>
-              <img src={each.image} alt={each.name} />
-              <button
-                onClick={() => goToViewMore(each.id)}
-                className="view-more-button"
-              >
-                View More
-              </button>
-              {each.existingInFavourite ? (
-                <button
-                  onClick={goToFavouriteHandler}
-                  className="go-to-favourite-button"
-                >
-                  Go to Favourite
-                </button>
-              ) : (
-                <button
-                  onClick={() => addFoodHandler(each)}
-                  className="add-to-favourite-button"
-                >
-                  Add to Favourite
-                </button>
-              )}
-            </div>
-          ))
-        ) : (
-          <p>No results found.</p>
-        )}
-      </div>
+      {searchList.map((each) => (
+        <div key={each.id}>
+          <h4>{each.name}</h4>
+          <img src={each.image} width={100} height={100} alt={each.name} />
+          <h4>{each.description}</h4>
+          <button onClick={() => goToViewMore(each.id)}>view more</button>
+          {each.existingInFavourite ? (
+            <button onClick={goToFavouriteHandler}>go to fav</button>
+          ) : (
+            <button onClick={() => addfoodhandler(each)}>add to fav</button>
+          )}
+        </div>
+      ))}
 
       <ToastContainer />
     </div>

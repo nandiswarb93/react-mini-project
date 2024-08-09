@@ -6,20 +6,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
-  const [search, setSearch] = useState("");
-
-  const searchHandler = (event) => {
-    const userEntered = event.target.value;
-    setSearch(userEntered);
-  };
-  const submitHandler = () => {
-    if (search.length === 0) {
-      toast("please enter some thing to get");
-    } else {
-      console.log("search for : " + search);
-    }
-  };
-
   const { favDish } = useContext(RecipeContext);
   const linkStyle = {
     margin: "0 10px",
@@ -32,7 +18,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink to="/" style={linkStyle}>
+            <NavLink to="/home" style={linkStyle}>
               Home
             </NavLink>
           </li>
@@ -42,7 +28,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/registration" style={linkStyle}>
+            <NavLink to="/" style={linkStyle}>
               Registration
             </NavLink>
           </li>
@@ -62,6 +48,12 @@ const Navbar = () => {
               favourite's {favDish.length}
             </NavLink>
           </li>
+
+          <li className="nav-item">
+            <NavLink to="/settings" style={linkStyle}>
+              settings
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
@@ -69,70 +61,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// import { NavLink } from "react-router-dom";
-// import { useContext, useState } from "react";
-// import { RecipeContext } from "./navigator";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import "./Navbar.css"; // Import the CSS file
-
-// const Navbar = () => {
-//   const { darkmode } = useContext(RecipeContext);
-
-//   const { favDish } = useContext(RecipeContext);
-
-//   return (
-//     <nav
-//       className={`navbar-container navbar-expand-sm bg-${
-//         darkmode ? "dark" : "light"
-//       } navbar-dark`}
-//     >
-//       <div className="container-fluid">
-//         <ul className="navbar-list">
-//           <li className="navbar-item">
-//             <NavLink to="/" className="navbar-link" end>
-//               Home
-//             </NavLink>
-//           </li>
-//           <li className="navbar-item">
-//             <NavLink to="/login" className="navbar-link">
-//               Login
-//             </NavLink>
-//           </li>
-//           <li className="navbar-item">
-//             <NavLink to="/registration" className="navbar-link">
-//               Registration
-//             </NavLink>
-//           </li>
-//           <li className="navbar-item">
-//             <NavLink to="/location" className="navbar-link">
-//               Location
-//             </NavLink>
-//           </li>
-//           <li className="navbar-item">
-//             <NavLink to="/menu" className="navbar-link">
-//               Menu
-//             </NavLink>
-//           </li>
-//           <li className="navbar-item navbar-favourites">
-//             <NavLink to="/favourite" className="navbar-link">
-//               Favourites
-//             </NavLink>
-//             {favDish.length > 0 && (
-//               <span className="navbar-favourites-count">{favDish.length}</span>
-//             )}
-//           </li>
-//           <li className="navbar-item">
-//             <NavLink to="/setting" className="navbar-link">
-//               Settings
-//             </NavLink>
-//           </li>
-//         </ul>
-//       </div>
-//       <ToastContainer />
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
