@@ -3,7 +3,7 @@ import { RecipeContext } from "./navigator";
 import Navbar from "./navbar";
 
 function Setting() {
-  const { accname, darkmode, changeAccName } = useContext(RecipeContext);
+  const { accname, darkmode, changeAccountName } = useContext(RecipeContext);
   const [changeName, setChangeName] = useState("");
   const [userEntered, setUserEntered] = useState("");
 
@@ -13,7 +13,7 @@ function Setting() {
   };
 
   const nameChange = () => {
-    changeAccName(userEntered);
+    changeAccountName(userEntered);
     setChangeName(userEntered);
   };
 

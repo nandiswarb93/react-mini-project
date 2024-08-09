@@ -74,6 +74,7 @@ const Navigator = () => {
         favDish,
         addfavouritedishhaHandler,
         removeFoodHandler,
+        changeAccountName,
       }}
     >
       <BrowserRouter>
