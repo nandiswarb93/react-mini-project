@@ -26,8 +26,10 @@ const Menu = () => {
       <div className="grid">
         {product.map((each) => (
           <div key={each.id}>
-            <img src={each.image} width={200} height={200} />
-            <button>{each.name}</button>
+            <h4> Name of recipe : {each.name}</h4>
+            <img src={each.image} width={100} height={100} alt={each.name} />
+            <h5>Rating : {each.rating}</h5>
+            <h4>Recipe Description : {each.description}</h4>
           </div>
         ))}
       </div>

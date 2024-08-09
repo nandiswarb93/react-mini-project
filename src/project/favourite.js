@@ -22,7 +22,11 @@ const Favourite = () => {
               <div key={each.id}>
                 <h5>{each.name}</h5>
                 <img src={each.image} width={100} height={100}></img>
+                <h5>{each.rating}</h5>
                 <button onClick={() => delFoodHandler(each)}>Remove</button>
+                <button>-</button>
+                <button>{each.quantity}</button>
+                <button>+</button>
               </div>
             );
           })}

@@ -3,8 +3,7 @@ import { RecipeContext } from "./navigator";
 import Navbar from "./navbar";
 
 function Setting() {
-  const { accname, darkmode, changeAccountName } = useContext(RecipeContext);
-  const [changeName, setChangeName] = useState("");
+  const { accName, darkmode, changeAccountName } = useContext(RecipeContext);
   const [userEntered, setUserEntered] = useState("");
 
   const userHandler = (e) => {
@@ -14,13 +13,12 @@ function Setting() {
 
   const nameChange = () => {
     changeAccountName(userEntered);
-    setChangeName(userEntered);
   };
 
   return (
     <>
       <Navbar />
-      <h4>Welcome {accname}</h4>
+      <h4>Welcome {accName}</h4>
       <label htmlFor="username">Want to change username?</label>
       <input
         type="text"

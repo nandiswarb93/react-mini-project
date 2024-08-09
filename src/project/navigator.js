@@ -19,6 +19,7 @@ export const RecipeContext = createContext();
 const Navigator = () => {
   const [recipeList, setRecipeList] = useState([]);
   const [favDish, setFavDish] = useState([]);
+  const [accName, setAccName] = useState("Nandish");
 
   useEffect(() => {
     fetchRecipe();
@@ -31,6 +32,7 @@ const Navigator = () => {
         const newData = data.recipes.map((EachData) => ({
           ...EachData,
           isFav: false,
+          quantity: 1,
         }));
         setRecipeList(newData);
       }
@@ -64,7 +66,7 @@ const Navigator = () => {
   };
 
   const changeAccountName = (newName) => {
-    changeAccName(newName);
+    setAccName(newName);
   };
 
   return (
@@ -75,6 +77,7 @@ const Navigator = () => {
         addfavouritedishhaHandler,
         removeFoodHandler,
         changeAccountName,
+        accName,
       }}
     >
       <BrowserRouter>
