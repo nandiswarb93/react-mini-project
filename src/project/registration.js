@@ -65,7 +65,7 @@ const Registration = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <form>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address : </label>

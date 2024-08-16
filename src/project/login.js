@@ -54,7 +54,6 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
       <h1>Welcome to the Login Screen</h1>
 
       <form>
