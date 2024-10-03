@@ -1,0 +1,62 @@
+.favourite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+    padding: 20px; 
+}
+  .favourite-card {
+    background: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    text-align: center; 
+    padding: 15px; 
+  }
+  
+  .favourite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .favourite-card-image {
+    width: 90%; 
+    height: 200px; 
+    object-fit: cover;
+    border-bottom: 1px solid #e3e3e3; 
+    border-radius: 10px; 
+    margin: 0 auto; 
+  }
+  
+  .favourite-card-title, .favourite-card-rating, .favourite-card-actions {
+    margin: 10px 0; 
+    font-weight: 400; 
+  }
+  
+  .favourite-card-actions button {
+    margin: 5px; 
+    padding: 8px 12px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+  }
+  
+  .favourite-card-actions button:hover {
+    background-color: #007bff; 
+    color: white; 
+  }
+  
+  
+  @media (max-width: 768px) {
+    .favourite-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .favourite-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

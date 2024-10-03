@@ -1,12 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 import Navigator from "./project/navigator";
 
 function App() {
   return (
-    <>
-      <Navigator />
-    </>
+    <div className="app-container">
+      <div className="navigator-container">
+        <Navigator />
+      </div>
+    </div>
   );
 }
 

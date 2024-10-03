@@ -1,6 +1,7 @@
 import Navbar from "./navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./registration.css";
 
 const Registration = () => {
   const [username, setUserName] = useState("");
@@ -65,7 +66,10 @@ const Registration = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
+      <center>
+        <h2>Register here</h2>
+      </center>
       <form>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address : </label>

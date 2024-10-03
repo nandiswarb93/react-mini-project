@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { RecipeContext } from "./navigator";
 import Navbar from "./navbar";
+import { toast } from "react-toastify";
 
 function Setting() {
   const { accName, darkmode, changeAccountName } = useContext(RecipeContext);
@@ -12,7 +13,11 @@ function Setting() {
   };
 
   const nameChange = () => {
-    changeAccountName(userEntered);
+    if (userEntered.length > 1) {
+      changeAccountName(userEntered);
+    } else {
+      toast.error("please Don't submit Empty box try to fill with name");
+    }
   };
 
   return (

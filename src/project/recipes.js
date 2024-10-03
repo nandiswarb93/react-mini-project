@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { RecipeContext } from "./navigator"; // Ensure this path is correct
+import { RecipeContext } from "./navigator";
 import { useNavigate } from "react-router-dom";
+import "./Recipe.css";
 
 const Recipe = () => {
   const { id } = useParams();
@@ -50,32 +51,26 @@ const Recipe = () => {
   if (!recipe) return <div>Loading...</div>;
 
   return (
-    <div
-      style={{
-        border: "2px solid black",
-        width: 400,
-        height: 400,
-        padding: 20,
-      }}
-    >
-      <img src={recipe.image} width={100} height={200} alt={recipe.name} />
-      <h5>{recipe.id}</h5>
-      <h5>{recipe.name}</h5>
-      <h5>Ingredients:</h5>
-      <ul>
-        {recipe.ingredients.map((i, index) => (
-          <li key={index}>{i}</li>
-        ))}
-      </ul>
-      <h5>Instructions:</h5>
-      <ul>
-        {recipe.instructions.map((i, index) => (
-          <li key={index}>{i}</li>
-        ))}
-      </ul>
-      <button onClick={handleFavouriteToggle}>
-        {isFavourite ? "Go to Favourites" : "Add to Favourites"}
-      </button>
+    <div className="recipe-container">
+      <div className="recipe-card">
+        <img src={recipe.image} alt={recipe.name} />
+        <h5>{recipe.name}</h5>
+        <h5>Ingredients:</h5>
+        <ul>
+          {recipe.ingredients.map((i, index) => (
+            <li key={index}>{i}</li>
+          ))}
+        </ul>
+        <h5>Instructions:</h5>
+        <ul>
+          {recipe.instructions.map((i, index) => (
+            <li key={index}>{i}</li>
+          ))}
+        </ul>
+        <button onClick={handleFavouriteToggle}>
+          {isFavourite ? "Go to Favourites" : "Add to Favourites"}
+        </button>
+      </div>
     </div>
   );
 };

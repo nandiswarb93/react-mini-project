@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./navbar.css";
 
 const Navbar = () => {
   const { favDish } = useContext(RecipeContext);

@@ -1,0 +1,118 @@
+
+.home-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    max-width : 300vh;
+  }
+  
+  .home-container h4 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .home-search-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .home-search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card img {
+    width: 95%;
+    height: 300px;
+    border-bottom: 1px solid #e3e3e3;
+    border-radius : 10px;
+  }
+  
+  .card h4, .card h5 {
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .card-buttons {
+    margin-top: 10px;
+  }
+  
+  .card-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .card-buttons button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .card-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .card-buttons .quantity-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-buttons .quantity-buttons button {
+    background-color: #e9ecef;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  
+  .card-buttons .quantity-buttons button:hover {
+    background-color: #dee2e6;
+  }
+  
+  .card-buttons .quantity {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+ 
+
+
+ 

@@ -1,6 +1,7 @@
 import Navbar from "./navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
   const [username, setUserName] = useState("");
@@ -54,7 +55,10 @@ const Login = () => {
 
   return (
     <>
-      <h1>Welcome to the Login Screen</h1>
+      <Navbar />
+      <center>
+        <h1>Welcome to the Login Screen</h1>
+      </center>
 
       <form>
         <div className="form-group">
