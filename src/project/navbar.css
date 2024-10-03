@@ -1,40 +1,87 @@
-/* Navbar.css */
 
-body,ul,li{
-    margin : 0px;
-    padding : 0px;
+.navbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 10px 20px;
 }
+
+.container-fluid {
+  max-width: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
 .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-    color : white;
-    background-color : rgb(106, 203, 106);
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  width: 100%;
+  justify-content: space-around; 
+}
+
+.nav-item {
+  margin-right: 20px;
+  position: relative;
+}
+.nav-item:hover {
+  background-color: rgb(154, 152, 152);
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center; 
+  padding: 8px 10px; 
+  border-radius: 4px; 
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; 
+}
+
+
+.nav-link:hover {
+  background-color: #007bff; 
+  color: white; 
+  transform: scale(1.05); 
+}
+
+
+.nav-item .nav-link .badge {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  position: absolute;
+  top: -5px; 
+  right: -5px;
+  transition: background-color 0.3s, transform 0.3s; 
+}
+
+
+.nav-link:hover .badge {
+  background-color: #c82333; 
+  transform: scale(1.2); 
+}
+
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center; 
   }
-  
+
   .nav-item {
-    display: inline-block;
-    border : 2px solid green;
-    margin : 10px;
-    background-color : rgb(218, 115, 115);
-    height : 25px;
-    color : white;
-    border-radius : 10px;
+    margin-bottom: 10px;
   }
-  
+
   .nav-link {
-    color: black;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 14px;
+    padding: 10px; 
   }
-  
-  .nav-link:hover {
-    color: #007bff; /* Bootstrap's primary color */
-  }
-  
-  .nav-link.active {
-    color: #0056b3; /* Darker shade for active link */
-  }
-  
+}

@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
-import "./navbar.css"; // Ensure to create this file for custom styles
+import { RecipeContext } from "./navigator";
+import { useContext, useState } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./navbar.css";
 
 const Navbar = () => {
+  const { favDish } = useContext(RecipeContext);
   const linkStyle = {
     margin: "0 10px",
     textDecoration: "none",
@@ -13,7 +19,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink to="/" style={linkStyle}>
+            <NavLink to="/home" style={linkStyle}>
               Home
             </NavLink>
           </li>
@@ -23,7 +29,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/registration" style={linkStyle}>
+            <NavLink to="/" style={linkStyle}>
               Registration
             </NavLink>
           </li>
@@ -40,7 +46,13 @@ const Navbar = () => {
 
           <li className="nav-item">
             <NavLink to="/Favourite" style={linkStyle}>
-              favourite's
+              favourite's {favDish.length}
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            <NavLink to="/settings" style={linkStyle}>
+              settings
             </NavLink>
           </li>
         </ul>
