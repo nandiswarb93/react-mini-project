@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.io/react-mini-project/static/css/main.fb52afce.css",
-    "main.js": "/github.io/react-mini-project/static/js/main.23446999.js",
-    "static/js/453.8acca4ae.chunk.js": "/github.io/react-mini-project/static/js/453.8acca4ae.chunk.js",
-    "index.html": "/github.io/react-mini-project/index.html",
-    "main.fb52afce.css.map": "/github.io/react-mini-project/static/css/main.fb52afce.css.map",
-    "main.23446999.js.map": "/github.io/react-mini-project/static/js/main.23446999.js.map",
-    "453.8acca4ae.chunk.js.map": "/github.io/react-mini-project/static/js/453.8acca4ae.chunk.js.map"
+    "main.css": "/react-mini-project/static/css/main.fb52afce.css",
+    "main.js": "/react-mini-project/static/js/main.5dc22da9.js",
+    "static/js/453.8acca4ae.chunk.js": "/react-mini-project/static/js/453.8acca4ae.chunk.js",
+    "index.html": "/react-mini-project/index.html",
+    "main.fb52afce.css.map": "/react-mini-project/static/css/main.fb52afce.css.map",
+    "main.5dc22da9.js.map": "/react-mini-project/static/js/main.5dc22da9.js.map",
+    "453.8acca4ae.chunk.js.map": "/react-mini-project/static/js/453.8acca4ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb52afce.css",
-    "static/js/main.23446999.js"
+    "static/js/main.5dc22da9.js"
   ]
 }
